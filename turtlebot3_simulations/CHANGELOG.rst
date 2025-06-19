@@ -15,7 +15,7 @@ Changelog for package turtlebot3_simulations
 * Updated robot mesh in Gazebo and RViz
 * Contributors: Hyungyu Kim
 
-2.2.6 (2202-05-26)
+2.2.6 (2022-05-26)
 ------------------
 * ROS 2 Humble Hawksbill supported
 * Contributors: Will Son
