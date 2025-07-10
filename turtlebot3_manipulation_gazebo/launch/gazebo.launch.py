@@ -143,7 +143,6 @@ def generate_launch_description():
                 'world': world,
             }.items(),
         ),
-
         Node(
             package='gazebo_ros',
             executable='spawn_entity.py',
