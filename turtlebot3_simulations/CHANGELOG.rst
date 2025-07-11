@@ -2,6 +2,11 @@
 Changelog for package turtlebot3_simulations
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+2.3.8 (2025-07-10)
+------------------
+* Fixed the issue where the TurtleBot3 Manipulation Gazebo simulation was not working properly
+* Contributors: Hyungyu Kim
+
 2.3.6 (2025-06-19)
 ------------------
 * Included the TurtleBot3 Manipulation Gazebo simulation package in the metapackage's package.xml and updated the CI configuration accordingly
