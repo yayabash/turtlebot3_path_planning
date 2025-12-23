@@ -1,40 +1,69 @@
-# TurtleBot3
-<img src="https://raw.githubusercontent.com/ROBOTIS-GIT/emanual/master/assets/images/platform/turtlebot3/logo_turtlebot3.png" width="300">
+# TurtleBot3 Path Planning Demo
 
-- Active Branches: noetic, humble, main
-- Legacy Branches: *-devel
+This project demonstrates path planning for TurtleBot3 in simulation using the A* and DWA (Dynamic Window Approach) algorithms. The demo uses ROS 2 and Gazebo, with a custom map and navigation parameters.
 
-## Open Source Projects Related to TurtleBot3
-- [turtlebot3](https://github.com/ROBOTIS-GIT/turtlebot3)
-- [turtlebot3_msgs](https://github.com/ROBOTIS-GIT/turtlebot3_msgs)
-- [turtlebot3_simulations](https://github.com/ROBOTIS-GIT/turtlebot3_simulations)
-- [turtlebot3_manipulation](https://github.com/ROBOTIS-GIT/turtlebot3_manipulation)
-- [turtlebot3_manipulation_simulations](https://github.com/ROBOTIS-GIT/turtlebot3_manipulation_simulations)
-- [turtlebot3_applications](https://github.com/ROBOTIS-GIT/turtlebot3_applications)
-- [turtlebot3_applications_msgs](https://github.com/ROBOTIS-GIT/turtlebot3_applications_msgs)
-- [turtlebot3_machine_learning](https://github.com/ROBOTIS-GIT/turtlebot3_machine_learning)
-- [turtlebot3_autorace](https://github.com/ROBOTIS-GIT/turtlebot3_autorace)
-- [turtlebot3_home_service_challenge](https://github.com/ROBOTIS-GIT/turtlebot3_home_service_challenge)
-- [hls_lfcd_lds_driver](https://github.com/ROBOTIS-GIT/hls_lfcd_lds_driver)
-- [ld08_driver](https://github.com/ROBOTIS-GIT/ld08_driver)
-- [open_manipulator](https://github.com/ROBOTIS-GIT/open_manipulator)
-- [dynamixel_sdk](https://github.com/ROBOTIS-GIT/DynamixelSDK)
-- [OpenCR-Hardware](https://github.com/ROBOTIS-GIT/OpenCR-Hardware)
-- [OpenCR](https://github.com/ROBOTIS-GIT/OpenCR)
+## Features
 
-## Documentation, Videos, and Community
+- **A\***: Used for global path planning.
+- **DWA**: Used for local path planning and obstacle avoidance.
+- Custom map and navigation parameters for TurtleBot3.
+- Launch files for easy simulation and navigation startup.
 
-### Official Documentation
-- ⚙️ **[ROBOTIS DYNAMIXEL](https://dynamixel.com/)** – Official website for DYNAMIXEL
-- 📚 **[ROBOTIS e-Manual for Dynamixel SDK](http://emanual.robotis.com/docs/en/software/dynamixel/dynamixel_sdk/overview/)** – Official guide for Dynamixel SDK
-- 📚 **[ROBOTIS e-Manual for TurtleBot3](http://turtlebot3.robotis.com/)** – Official guide for TurtleBot3
-- 📚 **[ROBOTIS e-Manual for OpenMANIPULATOR-X](https://emanual.robotis.com/docs/en/platform/openmanipulator_x/overview/)** – Official guide for OpenMANIPULATOR-X
+## Requirements
 
-### Learning Resources
-- 🎥 **[ROBOTIS YouTube Channel](https://www.youtube.com/@ROBOTISCHANNEL)**
-- 🎥 **[ROBOTIS Open Source YouTube Channel](https://www.youtube.com/@ROBOTISOpenSourceTeam)**
-- 🎥 **[ROBOTIS TurtleBot3 YouTube Playlist](https://www.youtube.com/playlist?list=PLRG6WP3c31_XI3wlvHlx2Mp8BYqgqDURU)** – Video tutorials for TurtleBot3
-- 🎥 **[ROBOTIS OpenMANIPULATOR YouTube Playlist](https://www.youtube.com/playlist?list=PLRG6WP3c31_WpEsB6_Rdt3KhiopXQlUkb)** – Video tutorials for OpenMANIPULATOR
+- **Ubuntu**: 20.04 (Focal)
+- **ROS 2**: Foxy Fitzroy (recommended) or later
+- **Python**: 3.8+
+- **Gazebo**: 11+
+- **TurtleBot3 packages**: You must have the official TurtleBot3 packages installed on your system (not included in this repo).
+	- `turtlebot3`
+	- `turtlebot3_msgs`
+	- `turtlebot3_navigation2`
+	- `turtlebot3_gazebo`
+- **Other dependencies** (install via apt if missing):
+	- `ros-foxy-nav2-bringup`
+	- `ros-foxy-gazebo-ros-pkgs`
+	- `ros-foxy-robot-state-publisher`
+	- `ros-foxy-map-server`
+	- `ros-foxy-amcl`
+	- `ros-foxy-dwb-plugins`
 
-### Community & Support
-- 💬 **[ROBOTIS Community Forum](https://forum.robotis.com/)** – Get help and discuss with other users
+## How It Works
+
+- The simulation is launched in Gazebo with a custom world.
+- The navigation stack uses A* for global planning and DWA for local planning.
+- The robot navigates from a start to a goal position using the provided map and parameters.
+
+## Usage
+
+1. **Build the workspace:**
+	```bash
+	cd ~/turtlebot3_ws
+	colcon build
+	source install/setup.bash
+	```
+
+2. **Launch the simulation (Terminal 1):**
+	```bash
+	ros2 launch turtlebot3_gazebo turtlebot3_my_world.launch.py use_sim_time:=true
+	```
+
+3. **Launch navigation with custom map and parameters (Terminal 2):**
+	```bash
+	ros2 launch turtlebot3_navigation2 navigation2.launch.py map:=/absolute/path/to/maps/custom_map.yaml param:=/absolute/path/to/turtlebot3_navigation2/param/waffle_astar.yaml use_sim_time:=true
+	```
+
+	Replace `/absolute/path/to/` with the actual path to your workspace.
+
+4. **Set an initial pose and goal in RViz to start navigation.**
+
+## Project Structure
+
+- `turtlebot3_gazebo/`: Gazebo simulation files and launch scripts.
+- `turtlebot3_navigation2/`: Navigation launch and parameter files (A* and DWA).
+- `maps/`: Custom map files (YAML and PGM).
+
+## Notes
+
+- This repo does not include the full TurtleBot3 packages. Install them from the official sources.
+- The navigation parameters are tuned for the provided map and simulation environment.
