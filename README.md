@@ -11,9 +11,9 @@ This project demonstrates path planning for TurtleBot3 in simulation using the A
 
 ## Requirements
 
-- **Ubuntu**: 20.04 (Focal)
-- **ROS 2**: Foxy Fitzroy (recommended) or later
-- **Python**: 3.8+
+- **Ubuntu**: 22.04
+- **ROS 2**:  humbel
+- **Python**: 3.10+
 - **Gazebo**: 11+
 - **TurtleBot3 packages**: You must have the official TurtleBot3 packages installed on your system (not included in this repo).
 	- `turtlebot3`
