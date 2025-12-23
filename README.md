@@ -1,3 +1,9 @@
+<p align="left">
+	<img src="https://img.shields.io/badge/ROS%202-Humble-blue?logo=ros&logoColor=white" alt="ROS 2 Humble"/>
+	<img src="https://img.shields.io/badge/Gazebo%20Sim-Ignition-blue?logo=gazebo&logoColor=white" alt="Gazebo Sim Ignition"/>
+	<img src="https://img.shields.io/badge/Python-3.10-blue?logo=python&logoColor=white" alt="Python 3.10"/>
+	<img src="https://img.shields.io/badge/Nav2-2-brightgreen?logo=ros&logoColor=white" alt="Nav2"/>
+</p>
 # TurtleBot3 Path Planning Demo
 
 This project demonstrates path planning for TurtleBot3 in simulation using the A* and DWA (Dynamic Window Approach) algorithms. The demo uses ROS 2 and Gazebo, with a custom map and navigation parameters.
