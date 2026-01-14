@@ -4,14 +4,9 @@
 <img src="https://img.shields.io/badge/Python-3.10-blue?logo=python&logoColor=white" alt="Python 3.10"/>
 <img src="https://img.shields.io/badge/Nav2-Humble-brightgreen?logo=ros&logoColor=white" alt="Nav2"/>
 </p>
-# TurtleBot3 Path Planning Demo
-
-**Repository Link:** [https://github.com/yayabash/turtlebot3_path_planning](https://github.com/yayabash/turtlebot3_path_planning)
 
 This project demonstrates robust path planning for TurtleBot3 in simulation using the **A* (A-Star)** and **DWA (Dynamic Window Approach)** algorithms. The demo uses ROS 2 Humble and Gazebo, featuring dynamic obstacle avoidance testing and quantitative analysis.
 
-## Video Demonstration
-Video demonstration comming soon.
 
 ## Features
 
