@@ -87,7 +87,12 @@ This script will:
 *   Save trajectory plots to `analysis/` folder.
 
 ## Video Demonstration
-Video demonstration comming soon.
+
+This sped-up preview shows the robot navigating through the custom environment and avoiding obstacles.
+
+[![Demo Preview](demo_preview.gif)](turtlebot3_demo.mp4)
+
+[**Click here to watch the full 44s Demo Video (MP4)**](turtlebot3_demo.mp4)
 
 ## Results
 The project successfully demonstrates that while A* provides optimal global paths, the DWA controller is essential for handling unmapped dynamic obstacles. Our analysis shows a trade-off: avoiding obstacles dynamically increases path length but ensures safety without stopping, whereas complete blockages trigger global replanning which preserves path length but significantly increases travel time.
