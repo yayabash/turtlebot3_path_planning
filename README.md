@@ -5,6 +5,9 @@
 <img src="https://img.shields.io/badge/Nav2-Humble-brightgreen?logo=ros&logoColor=white" alt="Nav2"/>
 </p>
 
+> **🚧 Advanced Perception & Dynamic Navigation (Under Construction)**  
+> This project extends beyond traditional path planning, aiming to solve dynamic navigation challenges using **pure RGB-D perception**. i am actively researching and developing a pipeline that moves from simple obstacle avoidance to complete **scene understanding**, **abstract environment representation**, and **semantic segmentation** of dynamic agents. The roadmap includes exploring **volumetric mapping** and **4D reconstruction** to handle complex, changing environments without relying on 2D LiDAR.
+
 This project demonstrates robust path planning for TurtleBot3 in simulation using the **A* (A-Star)** and **DWA (Dynamic Window Approach)** algorithms. The demo uses ROS 2 Humble and Gazebo, featuring dynamic obstacle avoidance testing and quantitative analysis.
 
 
@@ -81,13 +84,4 @@ This script will:
 *   Repeat the test, but spawn a dynamic obstacle mid-path.
 *   Save trajectory plots to `analysis/` folder.
 
-## Video Demonstration
 
-This sped-up preview shows the robot navigating through the custom environment and avoiding obstacles.
-
-[![Demo Preview](demo_preview.gif)](turtlebot3_demo.mp4)
-
-[**Click here to watch the full 44s Demo Video (MP4)**](turtlebot3_demo.mp4)
-
-## Results
-The project successfully demonstrates that while A* provides optimal global paths, the DWA controller is essential for handling unmapped dynamic obstacles. Our analysis shows a trade-off: avoiding obstacles dynamically increases path length but ensures safety without stopping, whereas complete blockages trigger global replanning which preserves path length but significantly increases travel time.
